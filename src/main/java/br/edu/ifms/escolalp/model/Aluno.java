@@ -129,11 +129,4 @@ public class Aluno implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
-
 }
