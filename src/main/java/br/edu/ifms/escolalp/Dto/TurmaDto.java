@@ -1,5 +1,7 @@
 package br.edu.ifms.escolalp.Dto;
 
+import br.edu.ifms.escolalp.model.Turma;
+
 public class TurmaDto {
 
 	private Integer id;
@@ -10,7 +12,7 @@ public class TurmaDto {
 		
 	}
 	
-	public TurmaDto(TurmaDto obj) {
+	public TurmaDto(Turma obj) {
 		super();
 		this.id= obj.getId();
 		this.nome= obj.getNome();

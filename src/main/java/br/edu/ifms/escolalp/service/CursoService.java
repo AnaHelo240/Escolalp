@@ -4,11 +4,16 @@ package br.edu.ifms.escolalp.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import br.edu.ifms.escolalp.Dto.AlunoDto;
+import br.edu.ifms.escolalp.Dto.CursoDto;
+import br.edu.ifms.escolalp.model.Aluno;
 import br.edu.ifms.escolalp.model.Curso;
 import br.edu.ifms.escolalp.repository.CursoRepository;
 
@@ -61,5 +66,9 @@ public class CursoService {
 		
 	}
 
+	public Curso fromDto(CursoDto objDto) {
+		return new Curso(objDto.getId(), objDto.getNome(), objDto.getAnoDuracao());
+	}
+	
 }
 

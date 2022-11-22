@@ -1,5 +1,7 @@
 package br.edu.ifms.escolalp.Dto;
 
+import br.edu.ifms.escolalp.model.Escola;
+
 public class EscolaDto {
 	
 	private Integer id;
@@ -10,7 +12,7 @@ public class EscolaDto {
 		
 	}
 	
-	public EscolaDto(EscolaDto obj) {
+	public EscolaDto(Escola obj) {
 		super();
 		this.id= obj.getId();
 		this.nome= obj.getNome();

@@ -1,13 +1,17 @@
 package br.edu.ifms.escolalp.service;
 
 import java.util.List;
+
 import java.util.Optional;
+
+
 
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import br.edu.ifms.escolalp.Dto.AlunoDto;
 import br.edu.ifms.escolalp.model.Aluno;
 import br.edu.ifms.escolalp.repository.AlunoRepository;
 
@@ -56,6 +60,11 @@ public class AlunoService {
 		newObj.setIdade(obj.getIdade());
 		newObj.setSexo(obj.getSexo());
 	}
+
+	public Aluno fromDto(AlunoDto objDto) {
+		return new Aluno(objDto.getId(), objDto.getNome(), objDto.getIdade(), objDto.getSexo(), null, null);
+	}
+
 
 }
 

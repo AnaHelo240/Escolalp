@@ -3,11 +3,14 @@ package br.edu.ifms.escolalp.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import br.edu.ifms.escolalp.Dto.TurmaDto;
 import br.edu.ifms.escolalp.model.Turma;
 import br.edu.ifms.escolalp.repository.TurmaRepository;
 
@@ -56,6 +59,10 @@ public class TurmaService {
 	private void updateData(Turma newObj, Turma obj) {
 		newObj.setNome(obj.getNome());
 		newObj.setTurma(obj.getTurma());
+	}
+
+	public Turma fromDto(TurmaDto objDto) {
+		return new Turma(objDto.getId(), objDto.getNome(), objDto.getTurma(), null);
 	}
 
 }
